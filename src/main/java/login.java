@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class login {
     public static void main(String[] args) {
-        ApplicationContext context=new ClassPathXmlApplicationContext("spring/spring-core.xml", "spring/spring-transaction.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("spring/spring-core.xml", "spring/spring.xml");
         UserService service=context.getBean("aaa",UserService.class);
         User user=service.login("admin","1");
         System.out.println(user);

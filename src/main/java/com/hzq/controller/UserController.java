@@ -15,10 +15,11 @@ public class UserController {
     @Resource
     private UserService userService;
     @RequestMapping("/login")
-    public String doLogin(User user, HttpSession session){
+    public ModelAndView  doLogin(User user, HttpSession session){
         User login=userService.login(user.getUserName(),user.getPassword());
         session.setAttribute("user",user);
-        return "success";
+        System.out.println("4454");
+        return new ModelAndView("/success.jsp");
     }
 
 }
